@@ -246,6 +246,8 @@ MonoBehaviour:
   horizontalInput: 0
   speed: 10
   xRange: 10
+  jump: 300
+  animator: {fileID: 0}
 --- !u!50 &184513026
 Rigidbody2D:
   serializedVersion: 4
@@ -261,7 +263,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -611,6 +613,8 @@ MonoBehaviour:
   horizontalInput: 0
   speed: 10
   xRange: 10
+  jump: 300
+  animator: {fileID: 0}
 --- !u!61 &1104105729
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -652,7 +656,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1003,6 +1007,8 @@ MonoBehaviour:
   horizontalInput: 0
   speed: 10
   xRange: 10
+  jump: 300
+  animator: {fileID: 0}
 --- !u!50 &1640779910
 Rigidbody2D:
   serializedVersion: 4
@@ -1018,7 +1024,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1173,6 +1179,8 @@ MonoBehaviour:
   horizontalInput: 0
   speed: 10
   xRange: 10
+  jump: 300
+  animator: {fileID: 0}
 --- !u!61 &1870585534
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1214,7 +1222,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
