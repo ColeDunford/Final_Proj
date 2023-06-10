@@ -26,13 +26,46 @@ public class Player_Controller : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        {
             Anim.SetBool("IsMoving", true);
-        else Anim.SetBool("IsMoving", false);
-       
+        }
+           
+        else
+        {
+            Anim.SetBool("IsMoving", false);
+        }
+
+        if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.E))
+        {
+            Anim.SetTrigger("Jump");
+        }
+
+         if (Input.GetKey(KeyCode.Q))
+        {
+            Anim.SetTrigger("LiteATK");
+        }
+
+        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.E))
+        {
+            Anim.SetTrigger("UpATK");
+        }
+
+         if (Input.GetKey(KeyCode.E))
+        {
+            Anim.SetTrigger("HvyATK");
+        }
+
+         if (Input.GetKey(KeyCode.S))
+        {
+            Anim.SetTrigger("Shoot");
+        }
+
+
         if (Input.GetKeyDown(KeyCode.W))
         {
             PlayerRb.AddForce(new Vector2(PlayerRb.velocity.x, jump));
         }
+       
     }
 
 }
