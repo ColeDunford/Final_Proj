@@ -60,6 +60,11 @@ public class Player_Controller : MonoBehaviour
             Anim.SetTrigger("Shoot");
         }
 
+         if (Input.GetKey(KeyCode.A ) || Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.S))
+        {
+            Anim.SetTrigger("RunShoot");
+        }
+
 
         if (Input.GetKeyDown(KeyCode.W))
         {
