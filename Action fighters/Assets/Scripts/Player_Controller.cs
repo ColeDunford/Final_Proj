@@ -10,6 +10,9 @@ public class Player_Controller : MonoBehaviour
     private Rigidbody2D PlayerRb;
     private Animator Anim;
     public float jump;
+    public Transform ATKpnt;
+    public float ATKRange = 0.5f;
+    public LayerMask enemyLayers;
     
     // Start is called before the first frame update
     void Start()
@@ -18,14 +21,34 @@ public class Player_Controller : MonoBehaviour
         Anim = GetComponent<Animator>();
     }
 
+    void Attack()
+    {
+
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(ATKpnt.position, ATKRange, enemyLayers);
+
+        foreach(Collider2D enemy in hitEnemies)
+        {
+            Debug.Log("We Hit" + enemy.name);
+        }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        if (ATKpnt == null)
+            return;
+
+        Gizmos.DrawWireSphere(ATKpnt.position, ATKRange);
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
+
+   
         //move left and right
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.S))
         {
             Anim.SetBool("IsMoving", true);
         }
@@ -43,16 +66,20 @@ public class Player_Controller : MonoBehaviour
          if (Input.GetKey(KeyCode.Q))
         {
             Anim.SetTrigger("LiteATK");
+            Attack();
+
         }
 
         if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.E))
         {
             Anim.SetTrigger("UpATK");
+            Attack();
         }
 
          if (Input.GetKey(KeyCode.E))
         {
             Anim.SetTrigger("HvyATK");
+            Attack();
         }
 
          if (Input.GetKey(KeyCode.S))
@@ -70,7 +97,11 @@ public class Player_Controller : MonoBehaviour
         {
             PlayerRb.AddForce(new Vector2(PlayerRb.velocity.x, jump));
         }
+
        
+
+
+
     }
 
 }

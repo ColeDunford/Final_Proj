@@ -6,12 +6,20 @@ public class Gun : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject PlasmaPrefab;
+    private float attackDelay;
+    [SerializeField][Range(-5.0f, 5.0f)] float timeBetweenAttacks = 1;
 
     // Update is called once per frame
-    void Update() {
-        if (Input.GetButtonDown("Fire1"))
+
+   private  void Update()
+    {
+        if (attackDelay > 0f) attackDelay -= Time.deltaTime;
+
+
+        if (Input.GetButton("Fire1") && attackDelay <= 0.1f)
         {
             Shoot();
+            attackDelay = timeBetweenAttacks;
         }
     }
 
