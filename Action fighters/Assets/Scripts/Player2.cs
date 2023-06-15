@@ -89,7 +89,7 @@ public class Player2 : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.DownArrow))
         {
-            Anim.SetTrigger("RunShoot");
+            Anim.SetTrigger("RunShoot2");
         }
 
 
