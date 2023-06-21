@@ -21,15 +21,20 @@ public class Player2 : MonoBehaviour
         Anim = GetComponent<Animator>();
     }
 
-    void Attack()
+    public void Attack()
     {
 
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(ATKpnt.position, ATKRange, enemyLayers);
-
-        foreach (Collider2D enemy in hitEnemies)
+        if (Input.GetKeyDown(KeyCode.Slash) || Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.DownArrow))
         {
-            Debug.Log("We Hit" + enemy.name);
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(ATKpnt.position, ATKRange, enemyLayers);
+
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                Debug.Log("We Hit" + enemy.name);
+
+            }
         }
+            
     }
 
     void OnDrawGizmosSelected()
@@ -44,9 +49,15 @@ public class Player2 : MonoBehaviour
     void Update()
     {
 
-
         //move left and right
-        horizontalInput = Input.GetAxis("Horizontal");
+
+        if (Input.GetKey(KeyCode.LeftArrow))
+            horizontalInput = -1;
+        else if (Input.GetKey(KeyCode.RightArrow))
+            horizontalInput = 1;
+        else
+            horizontalInput = 0;
+
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.DownArrow))
         {

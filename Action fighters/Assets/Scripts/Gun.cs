@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
+    public GameObject fireballPrefab;
     public Transform firePoint;
     public GameObject PlasmaPrefab;
     private float attackDelay;

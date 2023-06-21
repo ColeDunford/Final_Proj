@@ -29,6 +29,7 @@ public class Player_Controller : MonoBehaviour
         foreach(Collider2D enemy in hitEnemies)
         {
             Debug.Log("We Hit" + enemy.name);
+
         }
     }
 
@@ -44,9 +45,13 @@ public class Player_Controller : MonoBehaviour
     void Update()
     {
 
-   
-        //move left and right
-        horizontalInput = Input.GetAxis("Horizontal");
+
+        if (Input.GetKey(KeyCode.A))
+            horizontalInput = -1;
+        else if (Input.GetKey(KeyCode.D))
+            horizontalInput = 1;
+        else
+            horizontalInput = 0;
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.S))
         {
