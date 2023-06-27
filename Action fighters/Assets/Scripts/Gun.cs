@@ -9,10 +9,12 @@ public class Gun : MonoBehaviour
     public GameObject PlasmaPrefab;
     private float attackDelay;
     [SerializeField][Range(-5.0f, 5.0f)] float timeBetweenAttacks = 1;
+    public Player2_Health player2_Health;
+    public int Damage;
 
     // Update is called once per frame
 
-   private  void Update()
+    private  void Update()
     {
         if (attackDelay > 0f) attackDelay -= Time.deltaTime;
 

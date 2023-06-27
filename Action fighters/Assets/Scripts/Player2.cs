@@ -12,7 +12,10 @@ public class Player2 : MonoBehaviour
     public float jump;
     public Transform ATKpnt;
     public float ATKRange = 0.5f;
+    public Player1_Health player1_Health;
+    public int Damage;
     public LayerMask enemyLayers;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -21,20 +24,17 @@ public class Player2 : MonoBehaviour
         Anim = GetComponent<Animator>();
     }
 
+  
+
     public void Attack()
     {
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(ATKpnt.position, ATKRange, enemyLayers);
 
-        if (Input.GetKeyDown(KeyCode.Slash) || Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.DownArrow))
+        foreach (Collider2D enemy in hitEnemies)
         {
-            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(ATKpnt.position, ATKRange, enemyLayers);
-
-            foreach (Collider2D enemy in hitEnemies)
-            {
-                Debug.Log("We Hit" + enemy.name);
-
-            }
+            Debug.Log("We Hit" + enemy.name);
+            player1_Health.takeDamage(Damage);
         }
-            
     }
 
     void OnDrawGizmosSelected()
@@ -74,7 +74,7 @@ public class Player2 : MonoBehaviour
             Anim.SetTrigger("Jump2");
         }
 
-        if (Input.GetKey(KeyCode.Slash))
+        if (Input.GetKeyDown(KeyCode.Slash))
         {
             Anim.SetTrigger("LiteATK2");
             Attack();
@@ -87,7 +87,7 @@ public class Player2 : MonoBehaviour
             Attack();
         }
 
-        if (Input.GetKey(KeyCode.RightShift))
+        if (Input.GetKeyDown(KeyCode.RightShift))
         {
             Anim.SetTrigger("HvyATK2");
             Attack();

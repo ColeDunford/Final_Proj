@@ -22,11 +22,17 @@ public class Gun2 : MonoBehaviour
             Shoot();
             attackDelay = timeBetweenAttacks;
         }
+
+        if (Input.GetKey(KeyCode.Slash) && attackDelay <= 0.1f)
+        {
+            Shoot();
+            attackDelay = timeBetweenAttacks;
+        }
     }
 
     void Shoot()
     {
         Instantiate(FireballPrefab, firePoint.position, firePoint.rotation);
+        Instantiate(FireballPrefab, firePoint.position, firePoint.rotation);
     }
-
 }

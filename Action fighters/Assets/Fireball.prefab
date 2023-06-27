@@ -159,3 +159,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   rb: {fileID: 1867890309}
+  player2_Health: {fileID: 0}
+  Damage: 20

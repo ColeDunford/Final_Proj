@@ -13,6 +13,8 @@ public class Player_Controller : MonoBehaviour
     public Transform ATKpnt;
     public float ATKRange = 0.5f;
     public LayerMask enemyLayers;
+    public Player2_Health player2_Health;
+    public int Damage;
     
     // Start is called before the first frame update
     void Start()
@@ -29,7 +31,8 @@ public class Player_Controller : MonoBehaviour
         foreach(Collider2D enemy in hitEnemies)
         {
             Debug.Log("We Hit" + enemy.name);
-
+            // call takedamge on player 2
+            player2_Health.takeDamage(Damage);
         }
     }
 
@@ -68,7 +71,7 @@ public class Player_Controller : MonoBehaviour
             Anim.SetTrigger("Jump");
         }
 
-         if (Input.GetKey(KeyCode.Q))
+         if (Input.GetKeyDown(KeyCode.Q))
         {
             Anim.SetTrigger("LiteATK");
             Attack();
@@ -81,7 +84,7 @@ public class Player_Controller : MonoBehaviour
             Attack();
         }
 
-         if (Input.GetKey(KeyCode.E))
+         if (Input.GetKeyDown(KeyCode.E))
         {
             Anim.SetTrigger("HvyATK");
             Attack();
@@ -94,7 +97,12 @@ public class Player_Controller : MonoBehaviour
 
          if (Input.GetKey(KeyCode.A ) || Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.S))
         {
-            Anim.SetTrigger("RunShoot");
+            Anim.SetBool("RunShoot", true);
+        }
+
+        else
+        {
+            Anim.SetBool("RunShoot", false);
         }
 
 

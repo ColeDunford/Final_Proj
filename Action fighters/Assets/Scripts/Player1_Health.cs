@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Player1_Health : MonoBehaviour
 {
-    //public GameObject Player2;
+   
     public Player2 player2;
     public Image Healthbar;
     public float Healthamount;
@@ -39,16 +39,8 @@ public class Player1_Health : MonoBehaviour
         {
             SceneManager.LoadScene("SampleScene");
 
-
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("MeleeATK2"))
-        {
-            Debug.Log("MINUS 20");
-            takeDamage(20);
-        }
-    }
+
 }
