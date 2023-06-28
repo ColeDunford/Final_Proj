@@ -15,12 +15,19 @@ public class Player_Controller : MonoBehaviour
     public LayerMask enemyLayers;
     public Player2_Health player2_Health;
     public int Damage;
-    
+    public Transform Groundcheck;
+    public LayerMask GroundLayer;
+
     // Start is called before the first frame update
     void Start()
     {
         PlayerRb = GetComponent<Rigidbody2D>();
         Anim = GetComponent<Animator>();
+    }
+
+    private bool IsOnGround()
+    {
+        return Physics2D.OverlapCircle(Groundcheck.position, 0.2f, GroundLayer);
     }
 
     void Attack()
@@ -78,7 +85,7 @@ public class Player_Controller : MonoBehaviour
 
         }
 
-        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.W) && Input.GetKey(KeyCode.E))
         {
             Anim.SetTrigger("UpATK");
             Attack();
@@ -106,7 +113,7 @@ public class Player_Controller : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) && IsOnGround())
         {
             PlayerRb.AddForce(new Vector2(PlayerRb.velocity.x, jump));
         }
