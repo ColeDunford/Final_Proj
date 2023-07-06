@@ -90,7 +90,7 @@ public class Player2 : MonoBehaviour
 
         }
 
-        if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.RightShift))
+        if (Input.GetKeyDown(KeyCode.UpArrow) && Input.GetKey(KeyCode.RightShift))
         {
             Anim.SetTrigger("UpATK2");
             Attack();

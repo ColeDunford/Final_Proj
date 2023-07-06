@@ -23,7 +23,7 @@ public class Bullet : MonoBehaviour
     {
         Debug.Log(hitinfo.name);
         Destroy(gameObject);
-        player2_Health.takeDamage(Damage);
+        player2_Health.takeDamage(Damage);        
     }
 
 }

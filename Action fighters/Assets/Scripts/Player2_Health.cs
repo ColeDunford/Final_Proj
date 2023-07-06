@@ -7,14 +7,14 @@ using UnityEngine.SceneManagement;
 public class Player2_Health : MonoBehaviour
 {
     //public GameObject Player2;
-    public Player_Controller Player_Controller;
+    public Player1 Player1;
     public Image Healthbar2;
     public float Healthamount;
 
     // Start is called before the first frame update
     void Start()
     {
-        Player_Controller  = GameObject.FindWithTag("Player").GetComponentInChildren<Player_Controller>();
+        Player1  = GameObject.FindWithTag("Player").GetComponentInChildren<Player1>();
     }
 
 

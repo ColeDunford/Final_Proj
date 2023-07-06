@@ -7,15 +7,18 @@ TagManager:
   - Health
   - Player2
   - MeleeATK2
+  - Character_Manager
+  - music
+  - Map_Manager
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - player 2
+  - player2
   - Water
   - UI
   - Enemy
-  - Player 1
+  - player1
   - Health
   - Ground
   - 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Controller : MonoBehaviour
+public class Player1 : MonoBehaviour
 {
     public float horizontalInput;
     public float speed = 10.0f;
@@ -17,6 +17,10 @@ public class Player_Controller : MonoBehaviour
     public int Damage;
     public Transform Groundcheck;
     public LayerMask GroundLayer;
+    public LayerMask player2layer;
+    public LayerMask player1layer;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -58,12 +62,14 @@ public class Player_Controller : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
             horizontalInput = -1;
+            
         else if (Input.GetKey(KeyCode.D))
             horizontalInput = 1;
+            
         else
             horizontalInput = 0;
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
             Anim.SetBool("IsMoving", true);
         }
@@ -102,11 +108,6 @@ public class Player_Controller : MonoBehaviour
             Anim.SetTrigger("Shoot");
         }
 
-         if (Input.GetKey(KeyCode.A ) || Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.S))
-        {
-            Anim.SetBool("RunShoot", true);
-        }
-
         else
         {
             Anim.SetBool("RunShoot", false);
@@ -119,9 +120,16 @@ public class Player_Controller : MonoBehaviour
         }
 
        
-
+       //if (player2layer.position.x > player1layer.position.x)
+       //{
+       //     gameObject.transform.localScale = new Vector3(-1, 1, 1);
+       //}
 
 
     }
+
+
+
+
 
 }
