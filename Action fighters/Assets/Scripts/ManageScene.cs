@@ -1,13 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static Unity.Burst.Intrinsics.X86.Avx;
 
 public class ManageScene : MonoBehaviour
 {
     float currentTime = 0f;
     float StartingTime = 99f;
+    GameObject player;
+
+
 
     [SerializeField] Text Countdown;
 
@@ -60,11 +65,19 @@ public class ManageScene : MonoBehaviour
     public void sceneSelect()
     {
         SceneManager.LoadScene("Character select");
+
+        if (gameObject.CompareTag("Music"))
+        {
+            gameObject.SetActive(false);
+        }
+
     }
+        
 
     public void Scene_Select()
     {
         SceneManager.LoadScene("SampleScene");
+
     }
 
 

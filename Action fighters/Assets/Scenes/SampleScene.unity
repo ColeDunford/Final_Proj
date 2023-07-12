@@ -1103,7 +1103,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1728061049
 GameObject:
@@ -1129,13 +1129,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1728061049}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 398.5, y: 324, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 2071779712}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1728061051
 MonoBehaviour:
@@ -1666,7 +1666,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1728061050}
   m_Father: {fileID: 2044181931}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1708,7 +1709,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 99
+  m_Text: 
 --- !u!222 &2071779714
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1755,8 +1756,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2120331638}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.04, y: 0.83, z: 1}
-  m_LocalScale: {x: 1.16, y: 1.26, z: 1}
+  m_LocalPosition: {x: -0.04, y: 1.2887, z: 1}
+  m_LocalScale: {x: 1.16, y: 1.5329866, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 331936936}
@@ -2084,6 +2085,10 @@ PrefabInstance:
       value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: 3119052985902315364, guid: 53adbba7393374adb88616b2fb27e9bd, type: 3}
+      propertyPath: Damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3119052985902315364, guid: 53adbba7393374adb88616b2fb27e9bd, type: 3}
       propertyPath: player2_Health
       value: 
       objectReference: {fileID: 553587422}
@@ -2110,6 +2115,10 @@ PrefabInstance:
     - target: {fileID: 3119052986156618747, guid: 53adbba7393374adb88616b2fb27e9bd, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 3119052986220300424, guid: 53adbba7393374adb88616b2fb27e9bd, type: 3}
+      propertyPath: Damage
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3119052986220300424, guid: 53adbba7393374adb88616b2fb27e9bd, type: 3}
       propertyPath: player2_Health

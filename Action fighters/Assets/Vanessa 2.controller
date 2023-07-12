@@ -221,31 +221,31 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: LiteATK2
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: HvyATK2
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: UpATK2
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Jump2
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -442,19 +442,19 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -1916990950790463779}
-    m_Position: {x: 360, y: -420, z: 0}
+    m_Position: {x: 340, y: -660, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6323853356989692606}
-    m_Position: {x: 390, y: -340, z: 0}
+    m_Position: {x: 310, y: -450, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7488720156988610291}
     m_Position: {x: 690, y: 60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6302368412330171113}
-    m_Position: {x: 140, y: 20, z: 0}
+    m_Position: {x: 290, y: 90, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4517055934340619348}
-    m_Position: {x: 760, y: -200, z: 0}
+    m_Position: {x: 420, y: -210, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -398531141438337762}
     m_Position: {x: 0, y: -240, z: 0}

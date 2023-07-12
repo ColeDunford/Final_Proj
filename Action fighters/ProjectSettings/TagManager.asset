@@ -10,6 +10,7 @@ TagManager:
   - Character_Manager
   - music
   - Map_Manager
+  - Music
   layers:
   - Default
   - TransparentFX

@@ -25,11 +25,7 @@ public class Character_Picker : MonoBehaviour
         }
 
 
-        map_Manager = GameObject.FindWithTag("Map_Manager").GetComponent<Map_Manager>();
-        //if(IsMap)
-        //{
-            Map[map_Manager.SelectedMap].SetActive(true);
-        //}
+        
         
         
 
