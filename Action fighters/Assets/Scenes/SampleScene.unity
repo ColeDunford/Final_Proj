@@ -6138,11 +6138,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3119052985902315160, guid: 53adbba7393374adb88616b2fb27e9bd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3119052985902315161, guid: 53adbba7393374adb88616b2fb27e9bd, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 3119052985902315364, guid: 53adbba7393374adb88616b2fb27e9bd, type: 3}
+      propertyPath: jump
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 3119052985902315364, guid: 53adbba7393374adb88616b2fb27e9bd, type: 3}
       propertyPath: Damage

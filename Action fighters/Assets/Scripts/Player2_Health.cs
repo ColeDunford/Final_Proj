@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Player2_Health : MonoBehaviour
 {
