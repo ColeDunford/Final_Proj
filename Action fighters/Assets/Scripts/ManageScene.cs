@@ -5,16 +5,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static Unity.Burst.Intrinsics.X86.Avx;
-
+using TMPro;
 public class ManageScene : MonoBehaviour
 {
     float currentTime = 0f;
     float StartingTime = 99f;
     GameObject player;
+    public static bool isPaused = false;
+    public GameObject pauseMenuGuI;
 
 
-
-    [SerializeField] Text Countdown;
+    [SerializeField] TextMeshProUGUI Countdown;
 
     private void Start()
     {
@@ -23,8 +24,29 @@ public class ManageScene : MonoBehaviour
 
     private void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused)
+            {
+                Resume();
+            }
+
+            else
+            {
+                Pause();
+            }
+
+
+
+        }
+
+
+
+
+
         currentTime -= 1 * Time.deltaTime;
-        Countdown.text = currentTime.ToString ("0");
+        Countdown.text = currentTime.ToString("0");
 
         if (currentTime <= 30)
         {
@@ -45,6 +67,23 @@ public class ManageScene : MonoBehaviour
 
     }
 
+    public void Resume()
+    {
+        Debug.Log("test");
+        pauseMenuGuI.SetActive(false);
+        Time.timeScale = 1f;
+        isPaused = false;
+    }
+
+    void Pause()
+    {
+        pauseMenuGuI.SetActive(true);
+        Time.timeScale = 0f;
+        isPaused = true;
+    }
+
+
+
     void Awake()
     {
         GameObject[] objs = GameObject.FindGameObjectsWithTag("music");
@@ -62,6 +101,11 @@ public class ManageScene : MonoBehaviour
         SceneManager.LoadScene("Main_Menu2");
     }
 
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void sceneSelect()
     {
         SceneManager.LoadScene("Character select");
@@ -76,6 +120,7 @@ public class ManageScene : MonoBehaviour
 
     public void Scene_Select()
     {
+        Round_Manager.Reset();
         SceneManager.LoadScene("SampleScene");
 
     }

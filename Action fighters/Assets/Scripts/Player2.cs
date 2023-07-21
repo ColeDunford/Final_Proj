@@ -17,14 +17,17 @@ public class Player2 : MonoBehaviour
     public LayerMask enemyLayers;
     public Transform Groundcheck;
     public LayerMask GroundLayer;
-
     private bool isAttacking = false;
+    public Player2_Health player2_Health;
+    public bool isTakingDamage;
 
     // Start is called before the first frame update
     void Start()
     {
         PlayerRb = GetComponent<Rigidbody2D>();
         Anim = GetComponent<Animator>();
+
+        player2_Health.Anim = Anim;
     }
 
 
@@ -38,11 +41,14 @@ public class Player2 : MonoBehaviour
     {
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(ATKpnt.position, ATKRange, enemyLayers);
 
-        foreach (Collider2D enemy in hitEnemies)
+      
+        foreach (Collider2D _enemy in hitEnemies)
         {
-            Debug.Log("We Hit" + enemy.name);
+            Debug.Log("We Hit" + _enemy.name);
             player1_Health.takeDamage(Damage);
+
         }
+
     }
 
     void OnDrawGizmosSelected()
@@ -56,9 +62,10 @@ public class Player2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (isTakingDamage) return;
+       
         //move left and right
-
+        
         if (Input.GetKey(KeyCode.LeftArrow))
             horizontalInput = -1;
         else if (Input.GetKey(KeyCode.RightArrow))

@@ -19,6 +19,8 @@ public class Player1 : MonoBehaviour
     public LayerMask GroundLayer;
     public LayerMask player2layer;
     public LayerMask player1layer;
+    public Player1_Health player1_Health;
+    public bool isTakingDamage1;
 
 
 
@@ -27,6 +29,8 @@ public class Player1 : MonoBehaviour
     {
         PlayerRb = GetComponent<Rigidbody2D>();
         Anim = GetComponent<Animator>();
+
+        player1_Health.Anim = Anim;
     }
 
     private bool IsOnGround()
@@ -37,14 +41,16 @@ public class Player1 : MonoBehaviour
     void Attack()
     {
 
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(ATKpnt.position, ATKRange, enemyLayers);
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(ATKpnt.position, ATKRange, enemyLayers);
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                Debug.Log("We Hit" + enemy.name);
 
-        foreach(Collider2D enemy in hitEnemies)
-        {
-            Debug.Log("We Hit" + enemy.name);
-            // call takedamge on player 2
-            player2_Health.takeDamage(Damage);
-        }
+
+                player2_Health.takeDamage(Damage);
+                // call takedamge on player 2
+            }
+
     }
 
     void OnDrawGizmosSelected()
@@ -58,6 +64,7 @@ public class Player1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isTakingDamage1) return;
 
 
         if (Input.GetKey(KeyCode.A))
@@ -79,7 +86,7 @@ public class Player1 : MonoBehaviour
             Anim.SetBool("IsMoving", false);
         }
 
-        if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.W) && !Input.GetKey(KeyCode.E))
         {
             Anim.SetTrigger("Jump");
         }
@@ -119,11 +126,6 @@ public class Player1 : MonoBehaviour
             PlayerRb.AddForce(new Vector2(PlayerRb.velocity.x, jump));
         }
 
-       
-       //if (player2layer.position.x > player1layer.position.x)
-       //{
-       //     gameObject.transform.localScale = new Vector3(-1, 1, 1);
-       //}
 
 
     }

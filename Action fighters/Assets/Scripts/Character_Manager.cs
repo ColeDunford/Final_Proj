@@ -54,6 +54,7 @@ public class Character_Manager : MonoBehaviour
     }
 
 
+
     public void BackOption2()
     {
         SelectedCharacter2 = SelectedCharacter2 - 1;
