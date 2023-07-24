@@ -15,7 +15,7 @@ public class music : MonoBehaviour
 
     void Awake()
     {
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("music");
+        music[] objs = FindObjectsOfType<music>();
 
         if (objs.Length > 1)
         {

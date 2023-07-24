@@ -6,14 +6,10 @@ using UnityEngine.TextCore.Text;
 public class Map_Manager : MonoBehaviour
 {
     public SpriteRenderer sr3;
-    public int SelectedMap = 0;
+    public static int SelectedMap = 0;
     public List<Sprite> Maps = new List<Sprite>();
     // Start is called before the first frame update
-    
-    public void Start()
-    {
-        DontDestroyOnLoad(this.gameObject);
-    }
+
 
     public void NextOption()
     {

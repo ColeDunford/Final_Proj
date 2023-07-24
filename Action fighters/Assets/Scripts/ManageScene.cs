@@ -44,7 +44,6 @@ public class ManageScene : MonoBehaviour
 
 
 
-
         currentTime -= 1 * Time.deltaTime;
         Countdown.text = currentTime.ToString("0");
 
@@ -84,17 +83,17 @@ public class ManageScene : MonoBehaviour
 
 
 
-    void Awake()
-    {
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("music");
+    //void Awake()
+    //{
+    //    ManageScene[] objs = FindObjectsOfType<ManageScene>();
 
-        if (objs.Length > 1)
-        {
-            Destroy(this.gameObject);
-        }
+    //    if (objs.Length > 1)
+    //    {
+    //        Destroy(this.gameObject);
+    //    }
 
-        DontDestroyOnLoad(this.gameObject);
-    }
+    //    DontDestroyOnLoad(this.gameObject);
+    //}
 
     public void SceneSelect()
     {
@@ -104,9 +103,9 @@ public class ManageScene : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
-      
-            
+
         
+
     }
 
     public void sceneSelect()

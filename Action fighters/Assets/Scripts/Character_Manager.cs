@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class Character_Manager : MonoBehaviour
 {
@@ -10,18 +11,14 @@ public class Character_Manager : MonoBehaviour
     public SpriteRenderer sr2;
     public List<Sprite> Characters = new List<Sprite>();
     public List<Sprite> Characters2 = new List<Sprite>();
-    public int SelectedCharacter = 0;
-    public int SelectedCharacter2 = 0;
+    public static int SelectedCharacter = 0;
+    public static int SelectedCharacter2 = 0;
     public GameObject PlayerCharacter;
     [SerializeField] private GameObject Venessa1;
     public GameObject activeGameObject;
 
 
-    public void Start()
-    {
-        DontDestroyOnLoad(this.gameObject);
-    }
-
+   
     public void NextOption()
     {
         SelectedCharacter = SelectedCharacter + 1;

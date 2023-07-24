@@ -4331,7 +4331,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 451621bbf365a44f89ddeca4703670b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character_Manager: {fileID: 0}
   map_Manager: {fileID: 0}
   Map: []
   fighters:
@@ -6138,7 +6137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3119052985902315160, guid: 53adbba7393374adb88616b2fb27e9bd, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3119052985902315161, guid: 53adbba7393374adb88616b2fb27e9bd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6320,7 +6319,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 451621bbf365a44f89ddeca4703670b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character_Manager: {fileID: 0}
   map_Manager: {fileID: 0}
   Map: []
   fighters:

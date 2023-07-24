@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 248473870}
   - component: {fileID: 248473869}
   - component: {fileID: 248473868}
+  - component: {fileID: 248473871}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -352,9 +353,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 192057281}
-        m_TargetAssemblyTypeName: Character_Manager, Assembly-CSharp
-        m_MethodName: PlayGame
+      - m_Target: {fileID: 248473871}
+        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
+        m_MethodName: _LoadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -414,6 +415,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248473865}
   m_CullTransparentMesh: 1
+--- !u!114 &248473871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248473865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fafc6401b57346b98148882b0517580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &250041926
 GameObject:
   m_ObjectHideFlags: 0

@@ -35,7 +35,8 @@ public class Player1_Health : MonoBehaviour
 
     private void Awake()
     {
-        player2 = GameObject.FindWithTag("Player2").GetComponentInChildren<Player2>();
+        Time.timeScale = 1f;
+        player2 = FindObjectOfType<Player2>();
 
     }
     // Update is called once per frame
@@ -74,13 +75,19 @@ public class Player1_Health : MonoBehaviour
             if (Round_Manager.currentRound == 1)
             {
                 Round_Manager.wonRound2 = "P2";
+
+                if (FindObjectOfType<Round_Manager>().p2_Won1.activeInHierarchy && FindObjectOfType<Round_Manager>().p2_Won2.activeInHierarchy)
+                {
+                    End2MenuGuI.SetActive(true);
+                    Time.timeScale = 0f;
+                }
             }
             if (Round_Manager.currentRound == 2)
             {
                 Round_Manager.wonRound3 = "P2";
             }
 
-            if (Round_Manager.currentRound == 1)
+            if (Round_Manager.currentRound == 2)
             {
                 if (FindObjectOfType<Round_Manager>().p2_Won1.activeInHierarchy && FindObjectOfType<Round_Manager>().p2_Won2.activeInHierarchy)
                 {

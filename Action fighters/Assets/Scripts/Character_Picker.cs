@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Character_Picker : MonoBehaviour
 {
-    public Character_Manager character_Manager;
+   
     public Map_Manager map_Manager;
     public GameObject[] Map;
     public GameObject[] fighters;
@@ -14,14 +14,14 @@ public class Character_Picker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        character_Manager = GameObject.FindWithTag("Character_Manager").GetComponent<Character_Manager>();
+        
         if (isPlayer1)
         {
-            fighters[character_Manager.SelectedCharacter].SetActive(true);
+            fighters[Character_Manager.SelectedCharacter].SetActive(true);
         }
         else
         {
-            fighters[character_Manager.SelectedCharacter2].SetActive(true);
+            fighters[Character_Manager.SelectedCharacter2].SetActive(true);
         }
 
 
