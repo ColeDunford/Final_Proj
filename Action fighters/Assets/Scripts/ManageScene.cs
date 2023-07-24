@@ -104,11 +104,16 @@ public class ManageScene : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+      
+            
+        
     }
 
     public void sceneSelect()
     {
         SceneManager.LoadScene("Character select");
+
+
 
         if (gameObject.CompareTag("Music"))
         {
@@ -116,7 +121,11 @@ public class ManageScene : MonoBehaviour
         }
 
     }
-        
+
+
+
+
+
 
     public void Scene_Select()
     {
